@@ -136,6 +136,12 @@ public class CalendarQuickstart {
         for (Event ntE : ntEvents) {
         	ntE = service.events().insert(dcmusicId, ntE).execute();
         }
+
+        UStMusicHallCrawler usmhC = new UStMusicHallCrawler();
+        List<Event> usmhEvents = usmhC.constructEvents(items);
+        for (Event usmhE : usmhEvents) {
+        	usmhE = service.events().insert(dcmusicId, usmhE).execute();
+        }
     }
 
 }
